@@ -285,7 +285,7 @@
         <!--List-->
         <scene sceneID="Mgk-m7-H41">
             <objects>
-                <viewController title="List" automaticallyAdjustsScrollViewInsets="NO" id="O2z-ej-ook" sceneMemberID="viewController">
+                <viewController title="List" automaticallyAdjustsScrollViewInsets="NO" id="O2z-ej-ook" customClass="ListViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WgG-r0-XG9"/>
                         <viewControllerLayoutGuide type="bottom" id="ihb-HG-d5a"/>
@@ -348,7 +348,7 @@
         <!--Map-->
         <scene sceneID="BD8-QK-IB2">
             <objects>
-                <viewController title="Map" id="EVl-Wu-3AE" sceneMemberID="viewController">
+                <viewController title="Map" id="EVl-Wu-3AE" customClass="MapViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qOb-0m-a4x"/>
                         <viewControllerLayoutGuide type="bottom" id="J8a-vO-wfl"/>
@@ -394,6 +394,9 @@
                         <barButtonItem key="leftBarButtonItem" image="Pin" id="ckx-UT-0bF"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="dNw-LD-IPI"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="gQ3-Di-WCY" id="wAF-IB-ZPa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fep-sl-KsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
