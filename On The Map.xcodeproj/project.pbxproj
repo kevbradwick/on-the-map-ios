@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0CE31D8A1ADB8B31003C0B3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */; };
-		0CE31D8C1ADB8B31003C0B3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D8B1ADB8B31003C0B3D /* ViewController.swift */; };
+		0CE31D8C1ADB8B31003C0B3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D8B1ADB8B31003C0B3D /* LoginViewController.swift */; };
 		0CE31D8F1ADB8B31003C0B3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31D8D1ADB8B31003C0B3D /* Main.storyboard */; };
 		0CE31D911ADB8B31003C0B3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31D901ADB8B31003C0B3D /* Images.xcassets */; };
 		0CE31D941ADB8B31003C0B3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31D921ADB8B31003C0B3D /* LaunchScreen.xib */; };
 		0CE31DA01ADB8B31003C0B3D /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D9F1ADB8B31003C0B3D /* On_The_MapTests.swift */; };
+		0CE31DAB1ADB8BCF003C0B3D /* UdacityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */; };
+		0CE31DB11ADC4643003C0B3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DB01ADC4643003C0B3D /* Extensions.swift */; };
+		0CE31DB31ADC4748003C0B3D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DB21ADC4748003C0B3D /* Helpers.swift */; };
+		0CE31DB81ADC54A9003C0B3D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB51ADC54A8003C0B3D /* Roboto-Medium.ttf */; };
+		0CE31DB91ADC54A9003C0B3D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB61ADC54A9003C0B3D /* Roboto-Regular.ttf */; };
+		0CE31DBA1ADC54A9003C0B3D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB71ADC54A9003C0B3D /* Roboto-Thin.ttf */; };
+		0CE31DBF1ADC633A003C0B3D /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DBE1ADC633A003C0B3D /* LoginButton.swift */; };
+		0CE31DC11ADCDC24003C0B3D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DC01ADCDC24003C0B3D /* GradientView.swift */; };
+		0CE31DC31ADD85B1003C0B3D /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DC21ADD85B1003C0B3D /* LoginTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +38,22 @@
 		0CE31D841ADB8B31003C0B3D /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE31D881ADB8B31003C0B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CE31D8B1ADB8B31003C0B3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CE31D8B1ADB8B31003C0B3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0CE31D8E1ADB8B31003C0B3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CE31D901ADB8B31003C0B3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CE31D931ADB8B31003C0B3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0CE31D991ADB8B31003C0B3D /* On The MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On The MapTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE31D9E1ADB8B31003C0B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE31D9F1ADB8B31003C0B3D /* On_The_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapTests.swift; sourceTree = "<group>"; };
+		0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityService.swift; sourceTree = "<group>"; };
+		0CE31DB01ADC4643003C0B3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0CE31DB21ADC4748003C0B3D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0CE31DB51ADC54A8003C0B3D /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		0CE31DB61ADC54A9003C0B3D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		0CE31DB71ADC54A9003C0B3D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		0CE31DBE1ADC633A003C0B3D /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		0CE31DC01ADCDC24003C0B3D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		0CE31DC21ADD85B1003C0B3D /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +95,14 @@
 		0CE31D861ADB8B31003C0B3D /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				0CE31DBD1ADC6322003C0B3D /* Elements */,
+				0CE31DBC1ADC568F003C0B3D /* Controllers */,
+				0CE31DB41ADC5489003C0B3D /* Resources */,
+				0CE31DA91ADB8BB9003C0B3D /* Services */,
 				0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */,
-				0CE31D8B1ADB8B31003C0B3D /* ViewController.swift */,
-				0CE31D8D1ADB8B31003C0B3D /* Main.storyboard */,
-				0CE31D901ADB8B31003C0B3D /* Images.xcassets */,
-				0CE31D921ADB8B31003C0B3D /* LaunchScreen.xib */,
 				0CE31D871ADB8B31003C0B3D /* Supporting Files */,
+				0CE31DB01ADC4643003C0B3D /* Extensions.swift */,
+				0CE31DB21ADC4748003C0B3D /* Helpers.swift */,
 			);
 			path = "On The Map";
 			sourceTree = "<group>";
@@ -110,6 +130,53 @@
 				0CE31D9E1ADB8B31003C0B3D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CE31DA91ADB8BB9003C0B3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		0CE31DB41ADC5489003C0B3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CE31D921ADB8B31003C0B3D /* LaunchScreen.xib */,
+				0CE31D8D1ADB8B31003C0B3D /* Main.storyboard */,
+				0CE31D901ADB8B31003C0B3D /* Images.xcassets */,
+				0CE31DBB1ADC54BE003C0B3D /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0CE31DBB1ADC54BE003C0B3D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0CE31DB51ADC54A8003C0B3D /* Roboto-Medium.ttf */,
+				0CE31DB61ADC54A9003C0B3D /* Roboto-Regular.ttf */,
+				0CE31DB71ADC54A9003C0B3D /* Roboto-Thin.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		0CE31DBC1ADC568F003C0B3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0CE31D8B1ADB8B31003C0B3D /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0CE31DBD1ADC6322003C0B3D /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0CE31DBE1ADC633A003C0B3D /* LoginButton.swift */,
+				0CE31DC01ADCDC24003C0B3D /* GradientView.swift */,
+				0CE31DC21ADD85B1003C0B3D /* LoginTextField.swift */,
+			);
+			name = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE31DB81ADC54A9003C0B3D /* Roboto-Medium.ttf in Resources */,
 				0CE31D8F1ADB8B31003C0B3D /* Main.storyboard in Resources */,
+				0CE31DBA1ADC54A9003C0B3D /* Roboto-Thin.ttf in Resources */,
+				0CE31DB91ADC54A9003C0B3D /* Roboto-Regular.ttf in Resources */,
 				0CE31D941ADB8B31003C0B3D /* LaunchScreen.xib in Resources */,
 				0CE31D911ADB8B31003C0B3D /* Images.xcassets in Resources */,
 			);
@@ -212,7 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE31D8C1ADB8B31003C0B3D /* ViewController.swift in Sources */,
+				0CE31DB11ADC4643003C0B3D /* Extensions.swift in Sources */,
+				0CE31DC31ADD85B1003C0B3D /* LoginTextField.swift in Sources */,
+				0CE31DBF1ADC633A003C0B3D /* LoginButton.swift in Sources */,
+				0CE31DB31ADC4748003C0B3D /* Helpers.swift in Sources */,
+				0CE31D8C1ADB8B31003C0B3D /* LoginViewController.swift in Sources */,
+				0CE31DC11ADCDC24003C0B3D /* GradientView.swift in Sources */,
+				0CE31DAB1ADB8BCF003C0B3D /* UdacityService.swift in Sources */,
 				0CE31D8A1ADB8B31003C0B3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +485,7 @@
 				0CE31DA51ADB8B31003C0B3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CE31DA61ADB8B31003C0B3D /* Build configuration list for PBXNativeTarget "On The MapTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +494,7 @@
 				0CE31DA81ADB8B31003C0B3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

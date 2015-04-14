@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // sets the default font to Robot 17.0
+        UILabel.appearance().font = UIFont(name: "Roboto", size: 17.0)
+        UITextField.appearance().font = UIFont(name: "Roboto", size: 17.0)
+        
         return true
     }
 
