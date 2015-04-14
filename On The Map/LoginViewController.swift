@@ -14,6 +14,7 @@ let GRADIENT_COLOUR_TOP = UIColor(red: 255/255, green: 156/255, blue: 0, alpha: 
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var loginButton: LoginButton!
     @IBOutlet var backgroundView: GradientView!
     @IBOutlet var usernameField: LoginTextField!
