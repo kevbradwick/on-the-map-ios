@@ -29,5 +29,14 @@ class LoginViewController: UIViewController {
     @IBAction func loginToUdacity(sender: AnyObject) {
         
     }
+    
+    /*
+        Launches www.udacity.com in Safari so that they can sign up.
+    */
+    @IBAction func launchUdacityInSafari(sender: AnyObject) {
+        
+        let urlString = "https://www.udacity.com/account/auth#!/signup"
+        UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
+    }
 }
 

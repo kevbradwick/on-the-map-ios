@@ -116,12 +116,37 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2M-u3-4DF">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SxI-cR-cSV"/>
+                                        </constraints>
+                                        <state key="normal" title="Don't have an account? Sign Up">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="SxI-cR-cSV"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="SxI-cR-cSV"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="launchUdacityInSafari:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uzZ-D4-Hnx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eli-Fx-fNY" firstAttribute="leading" secondItem="Fv4-dj-uee" secondAttribute="leading" constant="16" id="4wa-Bz-hZw"/>
                                     <constraint firstItem="8rh-J3-IsM" firstAttribute="top" secondItem="cSI-PG-JVS" secondAttribute="bottom" constant="14" id="7Hd-Rs-J3q"/>
+                                    <constraint firstAttribute="trailing" secondItem="R2M-u3-4DF" secondAttribute="trailing" constant="16" id="7XC-Eh-SlA"/>
+                                    <constraint firstItem="R2M-u3-4DF" firstAttribute="leading" secondItem="Fv4-dj-uee" secondAttribute="leading" constant="16" id="8gv-E5-YVn"/>
                                     <constraint firstItem="cKO-xK-VKX" firstAttribute="leading" secondItem="Fv4-dj-uee" secondAttribute="leading" constant="16" id="JTM-tr-PAf"/>
                                     <constraint firstItem="ROB-eE-yWZ" firstAttribute="top" secondItem="Fv4-dj-uee" secondAttribute="top" constant="67" id="NjN-3Q-TKX"/>
+                                    <constraint firstItem="R2M-u3-4DF" firstAttribute="top" secondItem="cKO-xK-VKX" secondAttribute="bottom" constant="8" id="QWW-Nn-yjq"/>
                                     <constraint firstAttribute="trailing" secondItem="8rh-J3-IsM" secondAttribute="trailing" constant="16" id="Sge-Ol-o98"/>
                                     <constraint firstAttribute="centerX" secondItem="eli-Fx-fNY" secondAttribute="centerX" id="Ts4-YP-ZaN"/>
                                     <constraint firstAttribute="centerX" secondItem="cSI-PG-JVS" secondAttribute="centerX" id="aFp-a7-p81"/>
@@ -131,8 +156,8 @@
                                     <constraint firstAttribute="centerX" secondItem="ROB-eE-yWZ" secondAttribute="centerX" id="jIj-G7-NLy"/>
                                     <constraint firstItem="8rh-J3-IsM" firstAttribute="top" secondItem="cSI-PG-JVS" secondAttribute="bottom" constant="14" id="k2e-uT-JFl"/>
                                     <constraint firstItem="cSI-PG-JVS" firstAttribute="top" secondItem="eli-Fx-fNY" secondAttribute="bottom" constant="13" id="kU8-Zh-onL"/>
+                                    <constraint firstAttribute="bottom" secondItem="R2M-u3-4DF" secondAttribute="bottom" constant="40" id="ku2-JF-eBr"/>
                                     <constraint firstAttribute="trailing" secondItem="eli-Fx-fNY" secondAttribute="trailing" constant="16" id="mZA-sP-f38"/>
-                                    <constraint firstAttribute="bottom" secondItem="cKO-xK-VKX" secondAttribute="bottom" constant="50" id="oX1-L5-0qo"/>
                                     <constraint firstItem="cKO-xK-VKX" firstAttribute="top" secondItem="8rh-J3-IsM" secondAttribute="bottom" constant="10" id="pEe-W9-J3c"/>
                                     <constraint firstAttribute="centerX" secondItem="eli-Fx-fNY" secondAttribute="centerX" id="pNM-ma-uwi"/>
                                     <constraint firstItem="cKO-xK-VKX" firstAttribute="top" secondItem="8rh-J3-IsM" secondAttribute="bottom" constant="10" id="rSg-BA-k0D"/>
@@ -147,6 +172,7 @@
                                         <exclude reference="8rh-J3-IsM"/>
                                         <exclude reference="cSI-PG-JVS"/>
                                         <exclude reference="ROB-eE-yWZ"/>
+                                        <exclude reference="R2M-u3-4DF"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="NjN-3Q-TKX"/>
@@ -166,10 +192,13 @@
                                         <exclude reference="g72-Df-QDw"/>
                                         <exclude reference="k2e-uT-JFl"/>
                                         <exclude reference="JTM-tr-PAf"/>
-                                        <exclude reference="oX1-L5-0qo"/>
                                         <exclude reference="pEe-W9-J3c"/>
                                         <exclude reference="rSg-BA-k0D"/>
                                         <exclude reference="zVL-Xc-Rjt"/>
+                                        <exclude reference="7XC-Eh-SlA"/>
+                                        <exclude reference="8gv-E5-YVn"/>
+                                        <exclude reference="QWW-Nn-yjq"/>
+                                        <exclude reference="ku2-JF-eBr"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -179,6 +208,7 @@
                                         <include reference="8rh-J3-IsM"/>
                                         <include reference="cSI-PG-JVS"/>
                                         <include reference="ROB-eE-yWZ"/>
+                                        <include reference="R2M-u3-4DF"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="NjN-3Q-TKX"/>
@@ -198,10 +228,13 @@
                                         <include reference="g72-Df-QDw"/>
                                         <include reference="k2e-uT-JFl"/>
                                         <include reference="JTM-tr-PAf"/>
-                                        <include reference="oX1-L5-0qo"/>
                                         <include reference="pEe-W9-J3c"/>
                                         <include reference="rSg-BA-k0D"/>
                                         <include reference="zVL-Xc-Rjt"/>
+                                        <include reference="7XC-Eh-SlA"/>
+                                        <include reference="8gv-E5-YVn"/>
+                                        <include reference="QWW-Nn-yjq"/>
+                                        <include reference="ku2-JF-eBr"/>
                                     </mask>
                                 </variation>
                             </scrollView>
