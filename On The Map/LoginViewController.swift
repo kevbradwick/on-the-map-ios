@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginToUdacity(sender: AnyObject) {
         
+        // TODO: - Implement login last. For not just launch the tab bar controller
+        performSegueWithIdentifier("enterMainApplication", sender: nil)
     }
     
     /*
