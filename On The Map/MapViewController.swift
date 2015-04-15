@@ -17,24 +17,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
-
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        // 1. See if we already have the user's location
-        
-        // 2. If we do, centre the map
-        
-        // 3. If not, ask the user for permission
-        
-        // 4. If granted, center the map
-        
-        // 5. If denied, set default to UK
-    }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         if (CLLocationManager.locationServicesEnabled()) {
             println("Location Services enabled")
@@ -44,10 +29,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
-    }
-    
-    private func getUsersCurrentLocation() {
-        
     }
     
     /*!
