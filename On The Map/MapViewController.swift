@@ -27,9 +27,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, ParseServi
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+
+        // center the map on the current device location.
         if (CLLocationManager.locationServicesEnabled()) {
-            println("Location Services enabled")
             locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -45,6 +45,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, ParseServi
         
         if let location = locations.last as? CLLocation {
             self.mapView.setCenterCoordinate(location.coordinate, animated: true)
+            
+            // we only need this once on load, so stop updating now
             locationManager.stopUpdatingLocation()
         }
     }

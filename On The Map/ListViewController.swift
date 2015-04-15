@@ -28,15 +28,31 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - TablewView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PROTOTYPE_CELL) as! UITableViewCell
+        
         let location = locations[indexPath.row]
-        cell.textLabel?.text = "\(location.firstName) \(location.lastName)"
-        cell.detailTextLabel?.text = location.mapString
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(PROTOTYPE_CELL) as! StudentTableViewCell
+        cell.title?.text = "\(location.firstName) \(location.lastName)"
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 48
+    }
+    
+    /*!
+        Open the students link in Safari
+    */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let location = locations[indexPath.row]
+        if let url = location.mediaUrl {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
     
     // MARK: - ParseService
@@ -54,5 +70,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func parseService(service: ParseService, didError error: NSError) {
         println("ParseAPI Error: \(error.debugDescription)")
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func reloadStudentLocations() {
+        parseService.loadStudentLocations()
     }
 }
