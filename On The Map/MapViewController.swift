@@ -40,7 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             println("Location Services enabled")
             locationManager = CLLocationManager()
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
@@ -50,10 +50,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    /*!
+        Update the Map View with the current users location
+    */
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        let location = locations.last as? CLLocation
-        println(location)
+        if let location = locations.last as? CLLocation {
+            self.mapView.setCenterCoordinate(location.coordinate, animated: true)
+        }
+        
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
