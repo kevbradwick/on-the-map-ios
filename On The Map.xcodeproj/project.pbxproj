@@ -11,6 +11,9 @@
 		0C0E136F1ADDA97C002FFC81 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E136E1ADDA97C002FFC81 /* MapViewController.swift */; };
 		0C0E13711ADDA98F002FFC81 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E13701ADDA98F002FFC81 /* ListViewController.swift */; };
 		0C0E13731ADDB0A0002FFC81 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0E13721ADDB0A0002FFC81 /* CoreLocation.framework */; };
+		0C0E13751ADECBB7002FFC81 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E13741ADECBB7002FFC81 /* ParseService.swift */; };
+		0C0E13781ADECC60002FFC81 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E13771ADECC60002FFC81 /* StudentLocation.swift */; };
+		0C0E137A1ADEDD32002FFC81 /* ParseServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E13791ADEDD32002FFC81 /* ParseServiceDelegate.swift */; };
 		0CE31D8A1ADB8B31003C0B3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */; };
 		0CE31D8C1ADB8B31003C0B3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D8B1ADB8B31003C0B3D /* LoginViewController.swift */; };
 		0CE31D8F1ADB8B31003C0B3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31D8D1ADB8B31003C0B3D /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		0C0E136E1ADDA97C002FFC81 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0C0E13701ADDA98F002FFC81 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0C0E13721ADDB0A0002FFC81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0C0E13741ADECBB7002FFC81 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
+		0C0E13771ADECC60002FFC81 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		0C0E13791ADEDD32002FFC81 /* ParseServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseServiceDelegate.swift; sourceTree = "<group>"; };
 		0CE31D841ADB8B31003C0B3D /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE31D881ADB8B31003C0B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0E13761ADECC4A002FFC81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C0E13771ADECC60002FFC81 /* StudentLocation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		0CE31D7B1ADB8B31003C0B3D = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +121,7 @@
 		0CE31D861ADB8B31003C0B3D /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				0C0E13761ADECC4A002FFC81 /* Models */,
 				0CE31DBD1ADC6322003C0B3D /* Elements */,
 				0CE31DBC1ADC568F003C0B3D /* Controllers */,
 				0CE31DB41ADC5489003C0B3D /* Resources */,
@@ -148,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */,
+				0C0E13741ADECBB7002FFC81 /* ParseService.swift */,
+				0C0E13791ADEDD32002FFC81 /* ParseServiceDelegate.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -301,10 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0E13781ADECC60002FFC81 /* StudentLocation.swift in Sources */,
 				0CE31DB11ADC4643003C0B3D /* Extensions.swift in Sources */,
 				0CE31DC31ADD85B1003C0B3D /* LoginTextField.swift in Sources */,
 				0CE31DBF1ADC633A003C0B3D /* LoginButton.swift in Sources */,
+				0C0E13751ADECBB7002FFC81 /* ParseService.swift in Sources */,
 				0CE31DB31ADC4748003C0B3D /* Helpers.swift in Sources */,
+				0C0E137A1ADEDD32002FFC81 /* ParseServiceDelegate.swift in Sources */,
 				0C0E136F1ADDA97C002FFC81 /* MapViewController.swift in Sources */,
 				0CE31D8C1ADB8B31003C0B3D /* LoginViewController.swift in Sources */,
 				0CE31DC11ADCDC24003C0B3D /* GradientView.swift in Sources */,

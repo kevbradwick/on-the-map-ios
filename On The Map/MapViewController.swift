@@ -12,11 +12,18 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, ParseServiceDelegate {
 
     @IBOutlet var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
+    var parseService = ParseService.sharedInstance()
+    
+    override func viewDidLoad() {        
+        // parse service
+        parseService.delegate = self
+        parseService.loadStudentLocations()
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,11 +45,43 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         if let location = locations.last as? CLLocation {
             self.mapView.setCenterCoordinate(location.coordinate, animated: true)
+            locationManager.stopUpdatingLocation()
         }
-        
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
+    /*!
+        Reloads all the map data
+    */
+    @IBAction func reloadMapData() {
+        parseService.loadStudentLocations()
+    }
+    
+    // MARK: ParserService delegate methods
+    
+    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            // 1. remove all the pins from the map
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            
+            // 2. add pins to the map
+            for location in locations {
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = location.location.coordinate
+                annotation.title = location.fullName
+                if let url = location.mediaUrl {
+                    annotation.subtitle = url.absoluteString!
+                } else {
+                    annotation.subtitle = location.mapString
+                }
+                
+                self.mapView.addAnnotation(annotation)
+            }
+        })
+    }
+    
+    func parseService(service: ParseService, didError error: NSError) {
+        println("Error: \(error.debugDescription)")
     }
 }
