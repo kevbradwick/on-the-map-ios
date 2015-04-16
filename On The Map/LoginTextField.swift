@@ -16,7 +16,7 @@ class LoginTextField: UITextField {
         borderStyle = UITextBorderStyle.None
         backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
         textColor = UIColor.whiteColor()
-        font = UIFont(name: "Roboto", size: 16.0)
+        font = UIFont(name: "Roboto-Regular", size: 16.0)
     }
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {

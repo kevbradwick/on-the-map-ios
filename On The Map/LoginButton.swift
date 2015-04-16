@@ -13,7 +13,7 @@ class LoginButton: UIButton {
     override func awakeFromNib() {
         layer.cornerRadius = 0
         setTitle("Login", forState: .Normal)
-        titleLabel?.font = UIFont(name: "Roboto", size: 16.0)
+        titleLabel?.font = UIFont(name: "Roboto-Regular", size: 16.0)
         setTitleColor(UIColor.whiteColor(), forState: .Normal)
         backgroundColor = UIColor(red: 240/255, green: 88/255, blue: 14/255, alpha: 1.0)
     }

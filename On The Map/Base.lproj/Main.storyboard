@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lGl-cX-7eY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </mutableArray>
+        <mutableArray key="Roboto-Thin.ttf">
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Login-->
         <scene sceneID="ufC-wZ-h7g">
@@ -403,7 +412,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="Jk2-vP-pNO">
-                        <barButtonItem key="leftBarButtonItem" image="Pin" id="0pU-CA-GtR"/>
+                        <barButtonItem key="leftBarButtonItem" image="Pin" id="0pU-CA-GtR">
+                            <connections>
+                                <segue destination="lGl-cX-7eY" kind="showDetail" id="xgf-bu-dkz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="NqL-4m-70X">
                             <connections>
                                 <action selector="reloadStudentLocations" destination="O2z-ej-ook" id="0gt-hI-OqP"/>
@@ -417,6 +430,171 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hET-6R-Kd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3343.5" y="703"/>
+        </scene>
+        <!--Select Location View Controller-->
+        <scene sceneID="wRH-Z1-o9a">
+            <objects>
+                <viewController id="lGl-cX-7eY" customClass="SelectLocationViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bk9-kK-2B7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ry3-iI-z2o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OMK-Q3-79b">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-Sx-UgI">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-Zb-9BV">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="28"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="studying" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV4-mr-QHZ">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="28"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter location" translatesAutoresizingMaskIntoConstraints="NO" id="A5u-Y9-OF2">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="8YW-xz-HvV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8YW-xz-HvV"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="8YW-xz-HvV"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-WV-XjT">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Find on the map">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w6-GR-QOe">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="28"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="gjg-Zb-9BV" secondAttribute="centerX" id="4kL-71-xDQ"/>
+                                    <constraint firstItem="gjg-Zb-9BV" firstAttribute="top" secondItem="Rbt-Sx-UgI" secondAttribute="topMargin" constant="55" id="Ekk-1b-EJ6"/>
+                                    <constraint firstItem="A5u-Y9-OF2" firstAttribute="centerX" secondItem="cfK-WV-XjT" secondAttribute="centerX" id="JRS-ti-0d4"/>
+                                    <constraint firstItem="A5u-Y9-OF2" firstAttribute="centerX" secondItem="3w6-GR-QOe" secondAttribute="centerX" id="K1q-cd-14Y"/>
+                                    <constraint firstItem="3w6-GR-QOe" firstAttribute="top" secondItem="nV4-mr-QHZ" secondAttribute="bottom" constant="8" id="Rg3-uA-AqQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="nV4-mr-QHZ" secondAttribute="centerX" id="Z9r-SS-7t7"/>
+                                    <constraint firstItem="A5u-Y9-OF2" firstAttribute="leading" secondItem="Rbt-Sx-UgI" secondAttribute="leading" id="ZKI-n2-NRw"/>
+                                    <constraint firstItem="nV4-mr-QHZ" firstAttribute="top" secondItem="gjg-Zb-9BV" secondAttribute="bottom" constant="8" id="fsN-vT-nQB"/>
+                                    <constraint firstItem="cfK-WV-XjT" firstAttribute="top" secondItem="A5u-Y9-OF2" secondAttribute="bottom" constant="87" id="hKE-H6-Zny"/>
+                                    <constraint firstAttribute="centerX" secondItem="3w6-GR-QOe" secondAttribute="centerX" id="mFU-07-XIE"/>
+                                    <constraint firstItem="A5u-Y9-OF2" firstAttribute="top" secondItem="3w6-GR-QOe" secondAttribute="bottom" constant="56" id="oHb-py-a36"/>
+                                    <constraint firstAttribute="bottom" secondItem="A5u-Y9-OF2" secondAttribute="bottom" constant="204" id="qva-Kb-wSc"/>
+                                    <constraint firstAttribute="trailing" secondItem="A5u-Y9-OF2" secondAttribute="trailing" id="tDn-WV-q2Y"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="gjg-Zb-9BV"/>
+                                        <exclude reference="nV4-mr-QHZ"/>
+                                        <exclude reference="A5u-Y9-OF2"/>
+                                        <exclude reference="cfK-WV-XjT"/>
+                                        <exclude reference="3w6-GR-QOe"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="4kL-71-xDQ"/>
+                                        <exclude reference="Ekk-1b-EJ6"/>
+                                        <exclude reference="Z9r-SS-7t7"/>
+                                        <exclude reference="fsN-vT-nQB"/>
+                                        <exclude reference="Rg3-uA-AqQ"/>
+                                        <exclude reference="mFU-07-XIE"/>
+                                        <exclude reference="JRS-ti-0d4"/>
+                                        <exclude reference="K1q-cd-14Y"/>
+                                        <exclude reference="ZKI-n2-NRw"/>
+                                        <exclude reference="oHb-py-a36"/>
+                                        <exclude reference="qva-Kb-wSc"/>
+                                        <exclude reference="tDn-WV-q2Y"/>
+                                        <exclude reference="hKE-H6-Zny"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="gjg-Zb-9BV"/>
+                                        <include reference="nV4-mr-QHZ"/>
+                                        <include reference="A5u-Y9-OF2"/>
+                                        <include reference="cfK-WV-XjT"/>
+                                        <include reference="3w6-GR-QOe"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="4kL-71-xDQ"/>
+                                        <include reference="Ekk-1b-EJ6"/>
+                                        <include reference="Z9r-SS-7t7"/>
+                                        <include reference="fsN-vT-nQB"/>
+                                        <include reference="Rg3-uA-AqQ"/>
+                                        <include reference="mFU-07-XIE"/>
+                                        <include reference="JRS-ti-0d4"/>
+                                        <include reference="K1q-cd-14Y"/>
+                                        <include reference="ZKI-n2-NRw"/>
+                                        <include reference="oHb-py-a36"/>
+                                        <include reference="qva-Kb-wSc"/>
+                                        <include reference="tDn-WV-q2Y"/>
+                                        <include reference="hKE-H6-Zny"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rbt-Sx-UgI" firstAttribute="leading" secondItem="OMK-Q3-79b" secondAttribute="leading" id="C75-LU-Lkx"/>
+                            <constraint firstItem="ry3-iI-z2o" firstAttribute="top" secondItem="Rbt-Sx-UgI" secondAttribute="bottom" id="CXW-XD-M1b"/>
+                            <constraint firstItem="Rbt-Sx-UgI" firstAttribute="top" secondItem="OMK-Q3-79b" secondAttribute="top" id="MFd-3N-xya"/>
+                            <constraint firstAttribute="trailing" secondItem="Rbt-Sx-UgI" secondAttribute="trailing" id="YKE-5A-C29"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Rbt-Sx-UgI"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="C75-LU-Lkx"/>
+                                <exclude reference="MFd-3N-xya"/>
+                                <exclude reference="YKE-5A-C29"/>
+                                <exclude reference="CXW-XD-M1b"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Rbt-Sx-UgI"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="C75-LU-Lkx"/>
+                                <include reference="MFd-3N-xya"/>
+                                <include reference="YKE-5A-C29"/>
+                                <include reference="CXW-XD-M1b"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTextMessage" destination="3w6-GR-QOe" id="dd0-Lk-Wcg"/>
+                        <outlet property="geolocateButton" destination="cfK-WV-XjT" id="t9J-Cb-qbU"/>
+                        <outlet property="middleTextMessage" destination="nV4-mr-QHZ" id="nvW-dS-fzd"/>
+                        <outlet property="textField" destination="A5u-Y9-OF2" id="gUK-7p-91c"/>
+                        <outlet property="topTextMessage" destination="gjg-Zb-9BV" id="Fjv-P0-TIn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2AK-3j-29M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4303.5" y="378"/>
         </scene>
         <!--Map-->
         <scene sceneID="BD8-QK-IB2">
@@ -464,7 +642,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="1Vk-5U-6y0">
-                        <barButtonItem key="leftBarButtonItem" image="Pin" id="ckx-UT-0bF"/>
+                        <barButtonItem key="leftBarButtonItem" image="Pin" id="ckx-UT-0bF">
+                            <connections>
+                                <segue destination="lGl-cX-7eY" kind="showDetail" id="TAF-PY-3rS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="dNw-LD-IPI">
                             <connections>
                                 <action selector="reloadMapData" destination="EVl-Wu-3AE" id="IBD-KB-8aU"/>
@@ -543,4 +725,7 @@
         <image name="Pin" width="32" height="32"/>
         <image name="Udacity" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TAF-PY-3rS"/>
+    </inferredMetricsTieBreakers>
 </document>
