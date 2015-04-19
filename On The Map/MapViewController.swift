@@ -12,12 +12,11 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, ParseServiceDelegate {
+class MapViewController: ViewController, CLLocationManagerDelegate, ParseServiceDelegate {
 
     @IBOutlet var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
-    var parseService = ParseService.sharedInstance()
     
     override func viewDidLoad() {        
         // parse service

@@ -12,7 +12,7 @@ let GRADIENT_COLOUR_BOTTOM = UIColor(red: 255/255, green: 114/255, blue: 0/255, 
 let GRADIENT_COLOUR_TOP = UIColor(red: 255/255, green: 156/255, blue: 0, alpha: 1.0)
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UdacityServiceDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var loginButton: LoginButton!
@@ -20,16 +20,63 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameField: LoginTextField!
     @IBOutlet var passwordField: LoginTextField!
     
+    var udacityService = UdacityService()
+    
+    override func viewDidLoad() {
+        udacityService.delegate = self
+    }
+    
     override func viewWillLayoutSubviews() {
+        
         backgroundView.gradientWithColours(GRADIENT_COLOUR_TOP, bottomColour: GRADIENT_COLOUR_BOTTOM)
         
         passwordField.secureTextEntry = true
     }
-
-    @IBAction func loginToUdacity(sender: AnyObject) {
+    
+    // MARK: - Udacity Service
+    
+    func udacityService(service: UdacityService, didCreateSession sessionId: String, userId: String) {
         
-        // TODO: - Implement login last. For not just launch the tab bar controller
-        performSegueWithIdentifier("enterMainApplication", sender: nil)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // get user info
+        udacityService.getUser(userId, completionHandler: { (student: Student) -> Void in
+            
+            appDelegate.student = student
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("enterMainApplication", sender: student)
+            })
+        })
+    }
+    
+    /*!
+        Display a UIAlertController for an error.
+    */
+    func udacityService(service: UdacityService, didError error: NSError) {
+        
+        println("Error: \(error.debugDescription)")
+        
+        let alertController = UIAlertController(title: "Error", message: "An unknown error occured", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil)
+        
+        // set the message to be specific to failed authentication
+        if error.code == 403 {
+            alertController.message = "Authentication failure"
+        }
+        
+        alertController.addAction(cancelAction)
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.presentViewController(alertController, animated: true, completion: nil)
+        })
+    }
+
+    /*!
+        Attempt to authenticate with the Udacity API
+    */
+    @IBAction func loginToUdacity(sender: AnyObject) {
+        udacityService.authenticate(usernameField.text, password: passwordField.text)
     }
     
     /*

@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SelectLocationViewController: UIViewController {
+class SelectLocationViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var topTextMessage: UILabel!
     @IBOutlet var middleTextMessage: UILabel!
     @IBOutlet var bottomTextMessage: UILabel!
     @IBOutlet var geolocateButton: UIButton!
     @IBOutlet var textField: UITextView!
+    
+    var defaultText = "Enter location"
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
@@ -32,11 +35,50 @@ class SelectLocationViewController: UIViewController {
         textField.textColor = UIColor.whiteColor()
         textField.textAlignment = .Center
         textField.textContainerInset = UIEdgeInsetsMake(20.0, 20.0, 0, 20.0)
+        textField.delegate = self
+        textField.text = defaultText
         
         geolocateButton.layer.cornerRadius = 0
         geolocateButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 16.0)
         geolocateButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         geolocateButton.backgroundColor = blue
         geolocateButton.contentEdgeInsets = UIEdgeInsetsMake(7.0, 15.0, 7.0, 15.0)
+        geolocateButton.enabled = false
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textField.text == defaultText {
+            textField.text = ""
+        }
+    }
+    
+    func textViewDidChangeSelection(textView: UITextView) {
+        geolocateButton.enabled = true
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textField.text == "" {
+            geolocateButton.enabled = false
+            textField.text = defaultText
+        }
+    }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func performGeocodeAction(sender: AnyObject) {
+        
+        let geocoder = CLGeocoder()
+        
+        func completionHandler(placemarks: [AnyObject]!, error: NSError!) {
+            if let placemark = placemarks[0] as? CLPlacemark {
+                let controller = storyboard?.instantiateViewControllerWithIdentifier("ConfirmLocation") as! ConfirmLocationViewController
+                controller.location = placemark
+                presentViewController(controller, animated: false, completion: nil)
+            }
+        }
+        
+        geocoder.geocodeAddressString(textField.text, completionHandler: completionHandler)
     }
 }

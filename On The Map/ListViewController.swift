@@ -10,12 +10,11 @@ import UIKit
 
 let PROTOTYPE_CELL = "studentLocationCell"
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ParseServiceDelegate {
+class ListViewController: ViewController, UITableViewDataSource, UITableViewDelegate, ParseServiceDelegate {
 
     @IBOutlet var tableView: UITableView!
     
     var locations = [StudentLocation]()
-    var parseService = ParseService.sharedInstance()
     
     override func viewDidLoad() {
         parseService.delegate = self

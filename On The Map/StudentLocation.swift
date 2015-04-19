@@ -11,7 +11,7 @@ import CoreLocation
 
 class StudentLocation : NSObject {
     
-    var objectId: String!
+    var objectId: String = ""
     var uniqueKey: String!
     var latitude: Double!
     var longitude: Double!
@@ -22,6 +22,12 @@ class StudentLocation : NSObject {
     var location: CLLocation!
     var fullName: String!
     
+    /*!
+        init:locationDict:
+    
+        Discussion:
+            Initialiser using data dictionary from Parse API
+    */
     init(locationDict: [String: AnyObject]) {
         
         objectId = locationDict["objectId"] as! String
@@ -41,6 +47,25 @@ class StudentLocation : NSObject {
         
         // create the CLLocation so that it can be placed on the map
         location = CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    /*!
+        init:student:placemark:mapString:mediaUrl
+    
+        Discussion:
+            Alternate initialiser when creating new instances of a StudentLocation
+    */
+    init(student: Student, placemark: CLPlacemark, mapString string: String, mediaUrl url: String) {
+        
+        uniqueKey = student.key
+        latitude = placemark.location.coordinate.latitude
+        longitude = placemark.location.coordinate.longitude
+        firstName = student.firstName
+        lastName = student.lastName
+        mediaUrl = NSURL(string: url)
+        mapString = string
+        location = placemark.location
+        fullName = "\(firstName) \(lastName)"
     }
     
 }
