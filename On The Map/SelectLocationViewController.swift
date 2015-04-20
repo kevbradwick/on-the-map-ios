@@ -63,10 +63,6 @@ class SelectLocationViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @IBAction func cancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func performGeocodeAction(sender: AnyObject) {
         
         let geocoder = CLGeocoder()

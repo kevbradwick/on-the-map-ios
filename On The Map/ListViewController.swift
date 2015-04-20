@@ -76,4 +76,8 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
     @IBAction func reloadStudentLocations() {
         parseService.loadStudentLocations()
     }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        println("Unwind List Controller")
+    }
 }

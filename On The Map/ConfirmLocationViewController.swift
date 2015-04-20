@@ -88,8 +88,4 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         
         parseService.postStudentLocation(studentLocation)
     }
-    
-    @IBAction func cancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
 }

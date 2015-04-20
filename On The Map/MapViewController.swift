@@ -57,6 +57,10 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
         parseService.loadStudentLocations()
     }
     
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        println("Unwind Map Controller")
+    }
+    
     // MARK: ParserService delegate methods
     
     func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
