@@ -19,11 +19,15 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
     @IBOutlet var backgroundView: GradientView!
     @IBOutlet var usernameField: LoginTextField!
     @IBOutlet var passwordField: LoginTextField!
+    @IBOutlet var activityIndicatorView: UIView!
     
     var udacityService = UdacityService()
     
     override func viewDidLoad() {
         udacityService.delegate = self
+        
+        activityIndicatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        activityIndicatorView.hidden = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -41,6 +45,7 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
         // get user info and enter main application
         udacityService.getStudent(userId, completionHandler: { (student: Student) -> Void in
             appDelegate.student = student
+            self.activityIndicatorView.hidden = false
             self.performSegueWithIdentifier("enterMainApplication", sender: student)
         })
     }
@@ -60,6 +65,8 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
             alertController.message = "Authentication failure"
         }
         
+        activityIndicatorView.hidden = true
+        
         alertController.addAction(cancelAction)
         
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -69,6 +76,7 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
         Attempt to authenticate with the Udacity API
     */
     @IBAction func loginToUdacity(sender: AnyObject) {
+        activityIndicatorView.hidden = false
         udacityService.authenticate(usernameField.text, password: passwordField.text)
     }
     

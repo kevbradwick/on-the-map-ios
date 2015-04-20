@@ -16,6 +16,7 @@ class SelectLocationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var bottomTextMessage: UILabel!
     @IBOutlet var geolocateButton: UIButton!
     @IBOutlet var textField: UITextView!
+    @IBOutlet var activityIndicatorView: UIView!
     
     var defaultText = "Enter location"
     
@@ -44,6 +45,9 @@ class SelectLocationViewController: UIViewController, UITextViewDelegate {
         geolocateButton.backgroundColor = blue
         geolocateButton.contentEdgeInsets = UIEdgeInsetsMake(7.0, 15.0, 7.0, 15.0)
         geolocateButton.enabled = false
+        
+        activityIndicatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        activityIndicatorView.hidden = true
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
@@ -67,7 +71,11 @@ class SelectLocationViewController: UIViewController, UITextViewDelegate {
         
         let geocoder = CLGeocoder()
         
+        self.activityIndicatorView.hidden = false
+        
         func completionHandler(placemarks: [AnyObject]!, error: NSError!) {
+            
+            self.activityIndicatorView.hidden = true
             
             if error != nil {
                 println(error.debugDescription)

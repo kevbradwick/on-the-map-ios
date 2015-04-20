@@ -248,38 +248,84 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-QB-f9F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c6k-XM-bB7">
+                                        <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="c6k-XM-bB7" secondAttribute="centerY" id="dkR-d6-Rs6"/>
+                                    <constraint firstAttribute="centerX" secondItem="c6k-XM-bB7" secondAttribute="centerX" id="h6j-fj-GG0"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="c6k-XM-bB7"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="dkR-d6-Rs6"/>
+                                        <exclude reference="h6j-fj-GG0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="c6k-XM-bB7"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="dkR-d6-Rs6"/>
+                                        <include reference="h6j-fj-GG0"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Fv4-dj-uee" secondAttribute="trailing" constant="-16" id="1ev-BA-CSw"/>
                             <constraint firstItem="Fv4-dj-uee" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6hI-GI-x3c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yfe-QB-f9F" secondAttribute="trailing" constant="-16" id="Jxt-FL-ad8"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Fv4-dj-uee" secondAttribute="bottom" id="Mvy-h3-o5l"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="yfe-QB-f9F" secondAttribute="bottom" id="otk-qb-Okd"/>
                             <constraint firstItem="Fv4-dj-uee" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="pWy-yE-Vbd"/>
+                            <constraint firstItem="yfe-QB-f9F" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="tUk-Mi-QgA"/>
+                            <constraint firstItem="yfe-QB-f9F" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="vTj-Dy-5c4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Fv4-dj-uee"/>
+                                <exclude reference="yfe-QB-f9F"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Mvy-h3-o5l"/>
                                 <exclude reference="1ev-BA-CSw"/>
                                 <exclude reference="6hI-GI-x3c"/>
                                 <exclude reference="pWy-yE-Vbd"/>
+                                <exclude reference="Jxt-FL-ad8"/>
+                                <exclude reference="tUk-Mi-QgA"/>
+                                <exclude reference="vTj-Dy-5c4"/>
+                                <exclude reference="Mvy-h3-o5l"/>
+                                <exclude reference="otk-qb-Okd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Fv4-dj-uee"/>
+                                <include reference="yfe-QB-f9F"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Mvy-h3-o5l"/>
                                 <include reference="1ev-BA-CSw"/>
                                 <include reference="6hI-GI-x3c"/>
                                 <include reference="pWy-yE-Vbd"/>
+                                <include reference="Jxt-FL-ad8"/>
+                                <include reference="tUk-Mi-QgA"/>
+                                <include reference="vTj-Dy-5c4"/>
+                                <include reference="Mvy-h3-o5l"/>
+                                <include reference="otk-qb-Okd"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="yfe-QB-f9F" id="AVf-5b-PjA"/>
                         <outlet property="backgroundView" destination="kh9-bI-dsS" id="xm4-ik-Nwf"/>
                         <outlet property="loginButton" destination="cKO-xK-VKX" id="mK0-Wh-JxP"/>
                         <outlet property="passwordField" destination="8rh-J3-IsM" id="J7B-6m-Itu"/>
@@ -576,38 +622,84 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR0-mi-r2o" userLabel="Activity Indicator">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Q4R-im-qAh">
+                                        <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Q4R-im-qAh" secondAttribute="centerX" id="HfB-y4-zWU"/>
+                                    <constraint firstAttribute="centerY" secondItem="Q4R-im-qAh" secondAttribute="centerY" id="t35-wj-yzo"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Q4R-im-qAh"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="HfB-y4-zWU"/>
+                                        <exclude reference="t35-wj-yzo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Q4R-im-qAh"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="HfB-y4-zWU"/>
+                                        <include reference="t35-wj-yzo"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IR0-mi-r2o" firstAttribute="leading" secondItem="OMK-Q3-79b" secondAttribute="leadingMargin" constant="-16" id="1oz-z7-rFG"/>
                             <constraint firstItem="Rbt-Sx-UgI" firstAttribute="leading" secondItem="OMK-Q3-79b" secondAttribute="leading" id="C75-LU-Lkx"/>
                             <constraint firstItem="ry3-iI-z2o" firstAttribute="top" secondItem="Rbt-Sx-UgI" secondAttribute="bottom" id="CXW-XD-M1b"/>
                             <constraint firstItem="Rbt-Sx-UgI" firstAttribute="top" secondItem="OMK-Q3-79b" secondAttribute="top" id="MFd-3N-xya"/>
                             <constraint firstAttribute="trailing" secondItem="Rbt-Sx-UgI" secondAttribute="trailing" id="YKE-5A-C29"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IR0-mi-r2o" secondAttribute="trailing" constant="-16" id="eeK-qt-bBy"/>
+                            <constraint firstItem="IR0-mi-r2o" firstAttribute="top" secondItem="OMK-Q3-79b" secondAttribute="topMargin" id="i7c-QA-PhE"/>
+                            <constraint firstItem="ry3-iI-z2o" firstAttribute="top" secondItem="IR0-mi-r2o" secondAttribute="bottom" id="rQU-Ve-ev1"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Rbt-Sx-UgI"/>
+                                <exclude reference="IR0-mi-r2o"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="CXW-XD-M1b"/>
+                                <exclude reference="1oz-z7-rFG"/>
+                                <exclude reference="eeK-qt-bBy"/>
+                                <exclude reference="i7c-QA-PhE"/>
                                 <exclude reference="C75-LU-Lkx"/>
                                 <exclude reference="MFd-3N-xya"/>
                                 <exclude reference="YKE-5A-C29"/>
+                                <exclude reference="CXW-XD-M1b"/>
+                                <exclude reference="rQU-Ve-ev1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Rbt-Sx-UgI"/>
+                                <include reference="IR0-mi-r2o"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="CXW-XD-M1b"/>
+                                <include reference="1oz-z7-rFG"/>
+                                <include reference="eeK-qt-bBy"/>
+                                <include reference="i7c-QA-PhE"/>
                                 <include reference="C75-LU-Lkx"/>
                                 <include reference="MFd-3N-xya"/>
                                 <include reference="YKE-5A-C29"/>
+                                <include reference="CXW-XD-M1b"/>
+                                <include reference="rQU-Ve-ev1"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="IR0-mi-r2o" id="pUd-06-k6h"/>
                         <outlet property="bottomTextMessage" destination="3w6-GR-QOe" id="dd0-Lk-Wcg"/>
                         <outlet property="geolocateButton" destination="cfK-WV-XjT" id="t9J-Cb-qbU"/>
                         <outlet property="middleTextMessage" destination="nV4-mr-QHZ" id="nvW-dS-fzd"/>
