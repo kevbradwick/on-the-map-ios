@@ -68,6 +68,7 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
     }
     
     // MARK: - Parse Service
+    
     func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
         
         println("Student Location updated")
@@ -75,6 +76,23 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         // go to map view controller
         let controller = storyboard?.instantiateViewControllerWithIdentifier("TabController") as! UITabBarController
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    /*!
+        If the posting of a service fails, present an alert controller and
+    */
+    func parseService(service: ParseService, didError error: NSError) {
+        
+        let alertController = UIAlertController(title: "Error", message: "An error occured posting your location. Retry sending location?", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
+        let retryAction = UIAlertAction(title: "Retry", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.saveMyLocation(alertController)
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(retryAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func saveMyLocation(sender: AnyObject) {

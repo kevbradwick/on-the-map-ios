@@ -2,8 +2,6 @@
 //  MapViewController.swift
 //  On The Map
 //
-//  See http://nevan.net/2014/09/core-location-manager-changes-in-ios-8/ for info on CLLocationManager
-//
 //  Created by Kevin Bradwick on 14/04/2015.
 //  Copyright (c) 2015 KodeFoundry. All rights reserved.
 //
@@ -12,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: ViewController, CLLocationManagerDelegate, ParseServiceDelegate {
+class MapViewController: ViewController, CLLocationManagerDelegate, ParseServiceDelegate, MKMapViewDelegate {
 
     @IBOutlet var mapView: MKMapView!
     
@@ -22,6 +20,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
         // parse service
         parseService.delegate = self
         parseService.loadStudentLocations()
+        
+        mapView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,15 +50,29 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
         }
     }
     
+    // MARK: - MapView
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "location")
+        view.canShowCallout = true
+        view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
+        
+        return view
+    }
+    
+    /*!
+        Launch the students url in safari
+    */
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        UIApplication.sharedApplication().openURL(NSURL(string: view.annotation.subtitle!)!)
+    }
+    
     /*!
         Reloads all the map data
     */
     @IBAction func reloadMapData() {
         parseService.loadStudentLocations()
-    }
-    
-    @IBAction func unwind(segue: UIStoryboardSegue) {
-        println("Unwind Map Controller")
     }
     
     // MARK: ParserService delegate methods
@@ -75,6 +89,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = location.location.coordinate
                 annotation.title = location.fullName
+                
                 if let url = location.mediaUrl {
                     annotation.subtitle = url.absoluteString!
                 } else {

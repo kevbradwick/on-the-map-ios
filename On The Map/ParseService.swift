@@ -64,7 +64,7 @@ class ParseService : NSObject {
         Submit a student location. This will perform an update (PUT) if the user has already posted
     */
     func postStudentLocation(location: StudentLocation) {
-        
+
         var body: [String: AnyObject] = [
             "uniqueKey": location.uniqueKey,
             "firstName": location.firstName,
