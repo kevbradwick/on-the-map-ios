@@ -69,7 +69,7 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
     
     // MARK: - Parse Service
     
-    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
+    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
         
         println("Student Location updated")
         
@@ -95,7 +95,7 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
+    func parseService(service: ParseService, didLoadLocations locations: [StudentInformation]) {
         // do nothing
     }
     
@@ -104,7 +104,7 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // create the new StudentLocation
-        let studentLocation = StudentLocation(student: appDelegate.student!, placemark: location,
+        let studentLocation = StudentInformation(student: appDelegate.student!, placemark: location,
             mapString: location.name, mediaUrl: textArea.text)
         
         parseService.postStudentLocation(studentLocation)

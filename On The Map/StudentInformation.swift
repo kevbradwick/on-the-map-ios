@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct StudentLocation {
+struct StudentInformation {
     
     var objectId: String = ""
     var uniqueKey: String!

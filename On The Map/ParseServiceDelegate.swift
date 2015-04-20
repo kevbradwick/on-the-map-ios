@@ -16,7 +16,7 @@ protocol ParseServiceDelegate : NSObjectProtocol {
         Discussion:
             This is called when locations have been received from the Parse API
     */
-    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation])
+    func parseService(service: ParseService, didLoadLocations locations: [StudentInformation])
     
     /*!
         didError:service:error:
@@ -32,5 +32,5 @@ protocol ParseServiceDelegate : NSObjectProtocol {
         Discussion:
             Get's called when a location was posted (new or update)
     */
-    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation)
+    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation)
 }

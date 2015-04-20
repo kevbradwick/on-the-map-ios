@@ -14,7 +14,7 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
 
     @IBOutlet var tableView: UITableView!
     
-    var locations = [StudentLocation]()
+    var locations = [StudentInformation]()
     
     override func viewDidLoad() {
         parseService.delegate = self
@@ -56,7 +56,7 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
     
     // MARK: - ParseService
     
-    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
+    func parseService(service: ParseService, didLoadLocations locations: [StudentInformation]) {
         
         self.locations = locations
         
@@ -71,7 +71,7 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
         println("ParseAPI Error: \(error.debugDescription)")
     }
     
-    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
+    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
         // do nothing
     }
     

@@ -77,7 +77,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
     
     // MARK: ParserService delegate methods
     
-    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
+    func parseService(service: ParseService, didLoadLocations locations: [StudentInformation]) {
         
         dispatch_async(dispatch_get_main_queue(), {
             // 1. remove all the pins from the map
@@ -105,7 +105,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
         println("Error: \(error.debugDescription)")
     }
     
-    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
+    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
         // do nothing
     }
 }

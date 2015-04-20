@@ -14,7 +14,7 @@ let PARSE_BASE_URL = "https://api.parse.com/1/classes/StudentLocation"
 
 class ParseService : NSObject {
     
-    var studentLocations = [StudentLocation]()
+    var studentLocations = [StudentInformation]()
     
     private let urlSession = NSURLSession.sharedSession()
     
@@ -42,7 +42,7 @@ class ParseService : NSObject {
         
         doRequest(PARSE_BASE_URL, body: nil, httpMethod: "GET", onComplete: { (data) -> Void in
             
-            var locations = [StudentLocation]()
+            var locations = [StudentInformation]()
             let results = data["results"] as? [[String: AnyObject]]
             
             if results == nil {
@@ -52,7 +52,7 @@ class ParseService : NSObject {
             }
             
             for studentLocation in results! {
-                locations.append(StudentLocation(locationDict: studentLocation))
+                locations.append(StudentInformation(locationDict: studentLocation))
             }
             
             self.studentLocations = locations
@@ -63,7 +63,7 @@ class ParseService : NSObject {
     /*!
         Submit a student location. This will perform an update (PUT) if the user has already posted
     */
-    func postStudentLocation(location: StudentLocation) {
+    func postStudentLocation(location: StudentInformation) {
 
         var body: [String: AnyObject] = [
             "uniqueKey": location.uniqueKey,
@@ -148,7 +148,7 @@ class ParseService : NSObject {
     */
     func studentAlreadyPosted(key: String) -> Bool {
         
-        let locations = studentLocations.filter({ (student: StudentLocation) -> Bool in student.uniqueKey == key })
+        let locations = studentLocations.filter({ (student: StudentInformation) -> Bool in student.uniqueKey == key })
         return locations.count > 0
     }
 }
