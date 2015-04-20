@@ -100,12 +100,4 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
             }
         })
     }
-    
-    func parseService(service: ParseService, didError error: NSError) {
-        println("Error: \(error.debugDescription)")
-    }
-    
-    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
-        // do nothing
-    }
 }

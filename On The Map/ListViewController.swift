@@ -67,14 +67,6 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
         })
     }
     
-    func parseService(service: ParseService, didError error: NSError) {
-        println("ParseAPI Error: \(error.debugDescription)")
-    }
-    
-    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
-        // do nothing
-    }
-    
     // MARK: - Actions
     
     @IBAction func reloadStudentLocations() {

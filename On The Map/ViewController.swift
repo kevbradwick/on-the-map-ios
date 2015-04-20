@@ -52,4 +52,20 @@ class ViewController: UIViewController {
         return true
     }
     
+    func parseService(service: ParseService, didError error: NSError) {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
+        alertController.title = "Error"
+        alertController.message = "There was an unknown error with the Parse API service."
+        
+        let cancelAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
+        // do nothing
+    }
+    
 }
