@@ -74,7 +74,6 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         
         // go to map view controller
         let controller = storyboard?.instantiateViewControllerWithIdentifier("TabController") as! UITabBarController
-        
         self.presentViewController(controller, animated: true, completion: nil)
     }
     

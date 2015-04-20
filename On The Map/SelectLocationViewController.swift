@@ -68,6 +68,12 @@ class SelectLocationViewController: UIViewController, UITextViewDelegate {
         let geocoder = CLGeocoder()
         
         func completionHandler(placemarks: [AnyObject]!, error: NSError!) {
+            
+            if error != nil {
+                println(error.debugDescription)
+                return
+            }
+            
             if let placemark = placemarks[0] as? CLPlacemark {
                 let controller = storyboard?.instantiateViewControllerWithIdentifier("ConfirmLocation") as! ConfirmLocationViewController
                 controller.location = placemark

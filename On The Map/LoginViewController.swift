@@ -29,7 +29,6 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
     override func viewWillLayoutSubviews() {
         
         backgroundView.gradientWithColours(GRADIENT_COLOUR_TOP, bottomColour: GRADIENT_COLOUR_BOTTOM)
-        
         passwordField.secureTextEntry = true
     }
     
@@ -39,14 +38,10 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        // get user info
-        udacityService.getUser(userId, completionHandler: { (student: Student) -> Void in
-            
+        // get user info and enter main application
+        udacityService.getStudent(userId, completionHandler: { (student: Student) -> Void in
             appDelegate.student = student
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.performSegueWithIdentifier("enterMainApplication", sender: student)
-            })
+            self.performSegueWithIdentifier("enterMainApplication", sender: student)
         })
     }
     
@@ -67,9 +62,7 @@ class LoginViewController: UIViewController, UdacityServiceDelegate {
         
         alertController.addAction(cancelAction)
         
-        dispatch_async(dispatch_get_main_queue(), {
-            self.presentViewController(alertController, animated: true, completion: nil)
-        })
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
     /*!

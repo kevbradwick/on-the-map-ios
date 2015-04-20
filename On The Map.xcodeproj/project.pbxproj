@@ -28,8 +28,6 @@
 		0CE31D941ADB8B31003C0B3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31D921ADB8B31003C0B3D /* LaunchScreen.xib */; };
 		0CE31DA01ADB8B31003C0B3D /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31D9F1ADB8B31003C0B3D /* On_The_MapTests.swift */; };
 		0CE31DAB1ADB8BCF003C0B3D /* UdacityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */; };
-		0CE31DB11ADC4643003C0B3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DB01ADC4643003C0B3D /* Extensions.swift */; };
-		0CE31DB31ADC4748003C0B3D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31DB21ADC4748003C0B3D /* Helpers.swift */; };
 		0CE31DB81ADC54A9003C0B3D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB51ADC54A8003C0B3D /* Roboto-Medium.ttf */; };
 		0CE31DB91ADC54A9003C0B3D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB61ADC54A9003C0B3D /* Roboto-Regular.ttf */; };
 		0CE31DBA1ADC54A9003C0B3D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31DB71ADC54A9003C0B3D /* Roboto-Thin.ttf */; };
@@ -74,8 +72,6 @@
 		0CE31D9E1ADB8B31003C0B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE31D9F1ADB8B31003C0B3D /* On_The_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapTests.swift; sourceTree = "<group>"; };
 		0CE31DAA1ADB8BCF003C0B3D /* UdacityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityService.swift; sourceTree = "<group>"; };
-		0CE31DB01ADC4643003C0B3D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0CE31DB21ADC4748003C0B3D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0CE31DB51ADC54A8003C0B3D /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		0CE31DB61ADC54A9003C0B3D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		0CE31DB71ADC54A9003C0B3D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -143,8 +139,6 @@
 				0CE31DA91ADB8BB9003C0B3D /* Services */,
 				0CE31D891ADB8B31003C0B3D /* AppDelegate.swift */,
 				0CE31D871ADB8B31003C0B3D /* Supporting Files */,
-				0CE31DB01ADC4643003C0B3D /* Extensions.swift */,
-				0CE31DB21ADC4748003C0B3D /* Helpers.swift */,
 			);
 			path = "On The Map";
 			sourceTree = "<group>";
@@ -342,12 +336,10 @@
 				0C0E13781ADECC60002FFC81 /* StudentLocation.swift in Sources */,
 				0C88BE8D1AE44356009B285E /* ViewController.swift in Sources */,
 				0C88BE891AE3AF83009B285E /* UdacityServiceDelegate.swift in Sources */,
-				0CE31DB11ADC4643003C0B3D /* Extensions.swift in Sources */,
 				0CE31DC31ADD85B1003C0B3D /* LoginTextField.swift in Sources */,
 				0CE31DBF1ADC633A003C0B3D /* LoginButton.swift in Sources */,
 				0C1CAE771AE1A0B600EBE2B8 /* ConfirmLocationViewController.swift in Sources */,
 				0C0E13751ADECBB7002FFC81 /* ParseService.swift in Sources */,
-				0CE31DB31ADC4748003C0B3D /* Helpers.swift in Sources */,
 				0C0E137A1ADEDD32002FFC81 /* ParseServiceDelegate.swift in Sources */,
 				0C0E137E1ADF7E66002FFC81 /* SelectLocationViewController.swift in Sources */,
 				0C0E136F1ADDA97C002FFC81 /* MapViewController.swift in Sources */,
