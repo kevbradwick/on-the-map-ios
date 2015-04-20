@@ -104,4 +104,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, ParseService
     func parseService(service: ParseService, didError error: NSError) {
         println("Error: \(error.debugDescription)")
     }
+    
+    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
+        // do nothing
+    }
 }

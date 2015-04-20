@@ -95,6 +95,10 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation]) {
+        // do nothing
+    }
+    
     @IBAction func saveMyLocation(sender: AnyObject) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

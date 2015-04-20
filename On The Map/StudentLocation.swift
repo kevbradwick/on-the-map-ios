@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class StudentLocation : NSObject {
+struct StudentLocation {
     
     var objectId: String = ""
     var uniqueKey: String!

@@ -71,6 +71,10 @@ class ListViewController: ViewController, UITableViewDataSource, UITableViewDele
         println("ParseAPI Error: \(error.debugDescription)")
     }
     
+    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation) {
+        // do nothing
+    }
+    
     // MARK: - Actions
     
     @IBAction func reloadStudentLocations() {

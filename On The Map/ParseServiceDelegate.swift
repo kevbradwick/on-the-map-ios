@@ -8,8 +8,6 @@
 
 import Foundation
 
-@objc(ParseServiceDelegate)
-
 protocol ParseServiceDelegate : NSObjectProtocol {
     
     /*!
@@ -18,7 +16,7 @@ protocol ParseServiceDelegate : NSObjectProtocol {
         Discussion:
             This is called when locations have been received from the Parse API
     */
-    optional func parseService(service: ParseService, didLoadLocations locations: [StudentLocation])
+    func parseService(service: ParseService, didLoadLocations locations: [StudentLocation])
     
     /*!
         didError:service:error:
@@ -26,7 +24,7 @@ protocol ParseServiceDelegate : NSObjectProtocol {
         Discussion:
             A catch all delegate method for any type of error
     */
-    optional func parseService(service: ParseService, didError error: NSError)
+    func parseService(service: ParseService, didError error: NSError)
     
     /*!
         parseService:service:didPostStudentLocation:
@@ -34,5 +32,5 @@ protocol ParseServiceDelegate : NSObjectProtocol {
         Discussion:
             Get's called when a location was posted (new or update)
     */
-    optional func parseService(service: ParseService, didPostStudentLocation location: StudentLocation)
+    func parseService(service: ParseService, didPostStudentLocation location: StudentLocation)
 }

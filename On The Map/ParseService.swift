@@ -47,7 +47,7 @@ class ParseService : NSObject {
             
             if results == nil {
                 var error = NSError(domain: "Parse API Results", code: 10, userInfo: nil)
-                self.delegate?.parseService!(self, didError: error)
+                self.delegate?.parseService(self, didError: error)
                 return
             }
             
@@ -56,7 +56,7 @@ class ParseService : NSObject {
             }
             
             self.studentLocations = locations
-            self.delegate?.parseService!(self, didLoadLocations: locations)
+            self.delegate?.parseService(self, didLoadLocations: locations)
         })
     }
     
@@ -83,7 +83,7 @@ class ParseService : NSObject {
         var urlString = existingLocations.count > 0 ? "\(PARSE_BASE_URL)/\(existingLocations[0].objectId)" : PARSE_BASE_URL
         
         doRequest(urlString, body: body, httpMethod: httpMethod, onComplete: { (data) -> Void in
-            self.delegate?.parseService!(self, didPostStudentLocation: location)
+            self.delegate?.parseService(self, didPostStudentLocation: location)
         })
     }
     
@@ -116,7 +116,7 @@ class ParseService : NSObject {
             // trigger error on request error
             if error != nil {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.delegate?.parseService!(self, didError: error)
+                    self.delegate?.parseService(self, didError: error)
                 })
                 return
             }
@@ -127,7 +127,7 @@ class ParseService : NSObject {
             // if a parsing error happens, trigger the error handler on the delegate
             if parsingError != nil {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.delegate?.parseService!(self, didError: parsingError!)
+                    self.delegate?.parseService(self, didError: parsingError!)
                 })
                 return
             }
