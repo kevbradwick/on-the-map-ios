@@ -71,11 +71,15 @@ class ConfirmLocationViewController: UIViewController, UITextViewDelegate, Parse
     
     func parseService(service: ParseService, didPostStudentLocation location: StudentInformation) {
         
-        println("Student Location updated")
+        let alertController = UIAlertController(title: "Success", message: "Information posted!", preferredStyle: .Alert)
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TabController") as! UITabBarController
+            self.presentViewController(controller, animated: true, completion: nil)
+        })
         
-        // go to map view controller
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("TabController") as! UITabBarController
-        self.presentViewController(controller, animated: true, completion: nil)
+        alertController.addAction(okayAction)
+        presentViewController(alertController, animated: true, completion: nil)
+        
     }
     
     /*!
